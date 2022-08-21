@@ -4,12 +4,13 @@
 class Glogm < Formula
   desc 'Git log with fzf'
   homepage 'https://github.com/DanielKag/glogm'
-  url 'https://github.com/DanielKag/glogm/archive/refs/tags/v0.0.2.tar.gz'
-  sha256 'dfe46a9bb239cd977c9b75793874e7064a0591902b5a729fcef21db1025cded9'
+  url 'https://github.com/DanielKag/glogm/archive/refs/tags/v0.0.3.tar.gz'
+  sha256 '9abfb81ce213de4ffe65a30dac9a66d4e69ed2c0cb07cfc1a8c1fdcebf34161c'
   license 'MIT'
 
   # depends_on "cmake" => :build
   depends_on 'fzf'
+  depends_on 'git-delta'
 
   def install
     bin.install 'glogm'
