@@ -10,7 +10,6 @@ class Glogm < Formula
 
   # depends_on "cmake" => :build
   depends_on 'fzf'
-  depends_on 'delta'
 
   def install
     bin.install 'glogm'
