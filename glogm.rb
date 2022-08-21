@@ -2,20 +2,18 @@
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Glogm < Formula
-  desc ""
-  homepage ""
-  url "https://github.com/DanielKag/glogm/archive/refs/tags/v0.0.1.tar.gz"
-  sha256 "9e3f3bc7a4c1a4a045342054d88749b672e3c24263173ad448d22cd8d6ab3e35"
-  license ""
+  desc 'Git log with fzf'
+  homepage 'https://github.com/DanielKag/glogm'
+  url 'https://github.com/DanielKag/glogm/archive/refs/tags/v0.0.1.tar.gz'
+  sha256 '9e3f3bc7a4c1a4a045342054d88749b672e3c24263173ad448d22cd8d6ab3e35'
+  license 'MIT'
 
   # depends_on "cmake" => :build
+  depends_on 'fzf'
+  depends_on 'delta'
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    system "./configure", *std_configure_args, "--disable-silent-rules"
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    bin.install 'glogm'
   end
 
   test do
@@ -28,6 +26,6 @@ class Glogm < Formula
     #
     # The installed folder is not in the path, so use the entire path to any
     # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "false"
+    system 'false'
   end
 end
