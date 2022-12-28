@@ -4,8 +4,8 @@
 class Glogm < Formula
   desc 'Git log with fzf'
   homepage 'https://github.com/DanielKag/glogm'
-  url 'https://github.com/DanielKag/glogm/archive/refs/tags/v0.0.3.tar.gz'
-  sha256 '9abfb81ce213de4ffe65a30dac9a66d4e69ed2c0cb07cfc1a8c1fdcebf34161c'
+  url 'https://github.com/DanielKag/glogm/archive/refs/tags/v1.0.tar.gz'
+  sha256 'd7a9c6c2619ac0778a5303b43a4a4dea152bc2beff9ff66cbbf077c25da68bda'
   license 'MIT'
 
   # depends_on "cmake" => :build
@@ -13,7 +13,13 @@ class Glogm < Formula
   depends_on 'git-delta'
 
   def install
-    bin.install 'glogm'
+    # Move everything under #{libexec}/
+    libexec.install Dir["glogm"]
+
+    # Then write executables under #{bin}/
+    bin.write_exec_script (libexec/"glogm")
+
+    # bin.install 'selek'
   end
 
   test do
