@@ -1,8 +1,8 @@
 class Glogm < Formula
   desc "Git log with fzf"
   homepage "https://github.com/DanielKag/glogm"
-  url "https://github.com/DanielKag/glogm/archive/refs/tags/v1.0.tar.gz"
-  sha256 "d7a9c6c2619ac0778a5303b43a4a4dea152bc2beff9ff66cbbf077c25da68bda"
+  url "https://github.com/DanielKag/glogm/archive/refs/tags/v1.1.tar.gz"
+  sha256 "249231575cf834e58e9e56514ad5f7042782e1e288cf679938c87ae935726258"
   license "MIT"
 
   depends_on "fzf"
