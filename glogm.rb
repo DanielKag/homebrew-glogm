@@ -9,6 +9,7 @@ class Glogm < Formula
   depends_on "git-delta"
 
   def install
+    chmod "+x", "glogm"
     bin.install "glogm"
   end
 
