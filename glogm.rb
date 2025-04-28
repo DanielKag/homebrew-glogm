@@ -11,6 +11,12 @@ class Glogm < Formula
   def install
     chmod "+x", "glogm"
     bin.install "glogm"
+    
+    # Install the src directory alongside the main script
+    libexec.install "src"
+    
+    # Update the path in the main script to point to libexec
+    inreplace bin/"glogm", %r{"\$SCRIPT_DIR/src/main.sh"}, "\"#{libexec}/src/main.sh\""
   end
 
   test do
